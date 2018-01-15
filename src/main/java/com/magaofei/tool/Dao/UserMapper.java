@@ -10,12 +10,13 @@ public interface UserMapper {
 
     @Select("Select * FROM users")
     @Results({
-//            @Result(property = "userSex", column = "user_sex", javaType = UserSexEnum.class),
+            @Result(property = "userSex", column = "user_sex", javaType = UserSexEnum.class),
+            @Result(property = "userName", column = "user_name", javaType = String.class),
             @Result(property = "nickName", column = "nick_name", javaType = String.class),
             @Result(property = "id", column = "id", javaType = int.class),
             @Result(property = "password", column = "password", javaType = String.class),
             @Result(property = "age", column = "age", javaType = Integer.class)
-//            @Result(property = "")
+
     })
     List<UserEntity> getAll();
 
