@@ -1,23 +1,8 @@
 package com.magaofei.tool.Entity;
 
+import java.sql.Timestamp;
+
 public class UserEntity {
-
-    public UserEntity(String nickName, String userName, UserSexEnum userSex, String password, Integer age) {
-        this.nickName = nickName;
-        this.userName = userName;
-        this.userSex = userSex;
-        this.password = password;
-        this.age = age;
-    }
-
-    public UserEntity(Integer id, String nickName, String userName, UserSexEnum userSex, String password, Integer age) {
-        this.id = id;
-        this.nickName = nickName;
-        this.userName = userName;
-        this.userSex = userSex;
-        this.password = password;
-        this.age = age;
-    }
 
     public UserEntity() {
 
@@ -25,10 +10,79 @@ public class UserEntity {
 
     private int id;
     private String nickName;
+
+    public UserEntity(String nickName, String userName, UserSexEnum userSex, String password, Integer age, String email, Integer isStaff, Integer isActive, Timestamp dateJoined, Timestamp lastLogin) {
+        this.nickName = nickName;
+        this.userName = userName;
+        this.userSex = userSex;
+        this.password = password;
+        this.age = age;
+        this.email = email;
+        this.isStaff = isStaff;
+        this.isActive = isActive;
+        this.dateJoined = dateJoined;
+        this.lastLogin = lastLogin;
+    }
+
     private String userName;
     private UserSexEnum userSex;
     private String password;
     private Integer age;
+
+    private String email;
+    private Integer isStaff;
+    private Integer isActive;
+    private Timestamp dateJoined;
+    private Timestamp lastLogin;
+
+
+//    private Date date_joined;
+//    private Date last_login;
+
+
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
+    public Integer getIsStaff() {
+        return isStaff;
+    }
+
+    public void setIsStaff(Integer isStaff) {
+        this.isStaff = isStaff;
+    }
+
+    public Timestamp getDateJoined() {
+        return dateJoined;
+    }
+
+    public void setDateJoined(Timestamp dateJoined) {
+        this.dateJoined = dateJoined;
+    }
+
+    public Timestamp getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(Timestamp lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+
 
     public int getId() {
         return id;
