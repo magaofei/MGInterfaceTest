@@ -1,4 +1,4 @@
-package com.magaofei.tool.Dao;
+package com.magaofei.tool.Mapper;
 
 
 /*

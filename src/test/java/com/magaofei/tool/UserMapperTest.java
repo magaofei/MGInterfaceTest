@@ -1,6 +1,6 @@
 package com.magaofei.tool;
 
-import com.magaofei.tool.Dao.UserMapper;
+import com.magaofei.tool.Mapper.UserMapper;
 import com.magaofei.tool.Entity.UserEntity;
 import com.magaofei.tool.Entity.UserSexEnum;
 import org.junit.Test;

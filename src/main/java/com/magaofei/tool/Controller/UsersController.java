@@ -1,7 +1,7 @@
 package com.magaofei.tool.Controller;
 
 
-import com.magaofei.tool.Dao.UserMapper;
+import com.magaofei.tool.Mapper.UserMapper;
 import com.magaofei.tool.Entity.ResponseError;
 import com.magaofei.tool.Entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,8 @@ import java.util.List;
 @RequestMapping(path = "/users")
 public class UsersController {
 
-
     @Autowired
     private UserMapper userMapper;
-
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseError users () {
