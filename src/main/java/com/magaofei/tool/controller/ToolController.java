@@ -1,4 +1,4 @@
-package com.magaofei.tool.Controller;
+package com.magaofei.tool.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -1,6 +1,6 @@
-package com.magaofei.tool.Service;
+package com.magaofei.tool.service;
 
-import com.magaofei.tool.Entity.UserEntity;
+import com.magaofei.tool.entity.UserEntity;
 
 import java.util.List;
 

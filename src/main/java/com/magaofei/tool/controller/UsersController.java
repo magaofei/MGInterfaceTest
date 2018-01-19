@@ -1,9 +1,9 @@
-package com.magaofei.tool.Controller;
+package com.magaofei.tool.controller;
 
 
-import com.magaofei.tool.Mapper.UserMapper;
-import com.magaofei.tool.Entity.ResponseError;
-import com.magaofei.tool.Entity.UserEntity;
+import com.magaofei.tool.mapper.UserMapper;
+import com.magaofei.tool.entity.ResponseError;
+import com.magaofei.tool.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

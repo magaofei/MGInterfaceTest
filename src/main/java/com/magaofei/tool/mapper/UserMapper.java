@@ -1,7 +1,7 @@
-package com.magaofei.tool.Mapper;
+package com.magaofei.tool.mapper;
 
-import com.magaofei.tool.Entity.UserEntity;
-import com.magaofei.tool.Entity.UserSexEnum;
+import com.magaofei.tool.entity.UserEntity;
+import com.magaofei.tool.entity.UserSexEnum;
 import org.apache.ibatis.annotations.*;
 
 import java.sql.Timestamp;

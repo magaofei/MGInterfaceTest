@@ -1,4 +1,4 @@
-package com.magaofei.tool.Entity;
+package com.magaofei.tool.entity;
 
 public enum  UserSexEnum {
 

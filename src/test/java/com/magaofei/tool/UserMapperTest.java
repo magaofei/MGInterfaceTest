@@ -1,8 +1,8 @@
 package com.magaofei.tool;
 
-import com.magaofei.tool.Mapper.UserMapper;
-import com.magaofei.tool.Entity.UserEntity;
-import com.magaofei.tool.Entity.UserSexEnum;
+import com.magaofei.tool.mapper.UserMapper;
+import com.magaofei.tool.entity.UserEntity;
+import com.magaofei.tool.entity.UserSexEnum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
