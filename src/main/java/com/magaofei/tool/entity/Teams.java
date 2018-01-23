@@ -10,7 +10,7 @@ public class Teams {
     /**
      * 用户ID
      */
-    private Integer userId;
+
     private String teamName;
 
 

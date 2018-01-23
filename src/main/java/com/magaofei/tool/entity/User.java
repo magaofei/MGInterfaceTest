@@ -2,16 +2,16 @@ package com.magaofei.tool.entity;
 
 import java.sql.Timestamp;
 
-public class UserEntity {
+public class User {
 
-    public UserEntity() {
+    public User() {
 
     }
 
     private int id;
     private String nickName;
 
-    public UserEntity(String nickName, String userName, UserSexEnum userSex, String password, Integer age, String email, Integer isStaff, Integer isActive, Timestamp dateJoined, Timestamp lastLogin) {
+    public User(String nickName, String userName, UserSexEnum userSex, String password, Integer age, String email, Integer isStaff, Integer isActive, Timestamp dateJoined, Timestamp lastLogin) {
         this.nickName = nickName;
         this.userName = userName;
         this.userSex = userSex;

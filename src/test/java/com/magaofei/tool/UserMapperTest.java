@@ -1,7 +1,7 @@
 package com.magaofei.tool;
 
 import com.magaofei.tool.mapper.UserMapper;
-import com.magaofei.tool.entity.UserEntity;
+import com.magaofei.tool.entity.User;
 import com.magaofei.tool.entity.UserSexEnum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,7 +26,7 @@ public class UserMapperTest {
 //        Timestamp timestamp = new Timestamp(time);
         Date date = new Date();
         Timestamp timestamp = new Timestamp(date.getTime());
-        userMapper.insert(new UserEntity(
+        userMapper.insert(new User(
                 "aa",
                 "a123456",
                 UserSexEnum.MALE,
@@ -42,7 +42,7 @@ public class UserMapperTest {
 
     @Test
     public void testQuery() throws Exception {
-        List<UserEntity> users = userMapper.getAll();
+        List<User> users = userMapper.getAll();
         System.out.println(users.toString());
     }
 }

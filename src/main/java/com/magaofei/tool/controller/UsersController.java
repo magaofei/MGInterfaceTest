@@ -3,7 +3,7 @@ package com.magaofei.tool.controller;
 
 import com.magaofei.tool.mapper.UserMapper;
 import com.magaofei.tool.entity.ResponseError;
-import com.magaofei.tool.entity.UserEntity;
+import com.magaofei.tool.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +20,7 @@ public class UsersController {
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseError users () {
-        List<UserEntity> users = userMapper.getAll();
+        List<User> users = userMapper.getAll();
 
         ResponseError responseError = new ResponseError();
         responseError.setData(users);

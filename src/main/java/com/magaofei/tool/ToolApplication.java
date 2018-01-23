@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@MapperScan("com.magaofei.tool.dao")
+@MapperScan("com.magaofei.tool.mapper")
 @SpringBootApplication
 public class ToolApplication {
 
