@@ -6,7 +6,7 @@ package com.magaofei.tool.entity;
  *
  */
 public class InterfaceCheckPoint {
-    private Integer interfaceInfoId;
+    private int interfaceInfoId;
 
 
     /**
@@ -15,7 +15,11 @@ public class InterfaceCheckPoint {
      * 数据提取
      */
 
-    private ExtractingData extractingData;
+    private ExtractingDataTypeEnum extractingDataTypeEnum;
+
+    private String rule;
+    private String comeFrom;
+
 
     // 预期值
     private String expectedValue;

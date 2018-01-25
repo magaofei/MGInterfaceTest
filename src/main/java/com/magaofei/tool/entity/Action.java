@@ -16,31 +16,31 @@ public class Action {
      *
      */
 
-    private Integer teamId;
-    private Integer actionName;
+    private int teamId;
+    private int actionName;
 
-    private Integer actionRemark;
+    private int actionRemark;
 
     private InterfaceTestcaseActionEnum actionType;
     private String actionSql;
 
     private String actionRule;
 
-    private Integer interfaceId;
+    private int interfaceId;
 
-    public Integer getActionName() {
+    public int getActionName() {
         return actionName;
     }
 
-    public void setActionName(Integer actionName) {
+    public void setActionName(int actionName) {
         this.actionName = actionName;
     }
 
-    public Integer getActionRemark() {
+    public int getActionRemark() {
         return actionRemark;
     }
 
-    public void setActionRemark(Integer actionRemark) {
+    public void setActionRemark(int actionRemark) {
         this.actionRemark = actionRemark;
     }
 
@@ -68,11 +68,11 @@ public class Action {
         this.actionRule = actionRule;
     }
 
-    public Integer getInterfaceId() {
+    public int getInterfaceId() {
         return interfaceId;
     }
 
-    public void setInterfaceId(Integer interfaceId) {
+    public void setInterfaceId(int interfaceId) {
         this.interfaceId = interfaceId;
     }
 

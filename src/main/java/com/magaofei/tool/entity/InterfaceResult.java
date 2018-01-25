@@ -7,23 +7,23 @@ import java.sql.Timestamp;
 * */
 public class InterfaceResult extends InterfaceBase{
 
-    private Integer interfaceInfoId;
+    private int interfaceInfoId;
 
     private Timestamp startTime;
     private Timestamp endTime;
-    private Integer responseTimeLength;
+    private int responseTimeLength;
     private String resultError;
     private String responseData;
-    private Integer batchIndex;
-    private Integer batchType;
-    private Integer responseStatusCode;
+    private int batchIndex;
+    private int batchType;
+    private int responseStatusCode;
     private boolean success;
 
     private String responseCookies;
     private String responseHeaders;
     private String responseReason;
-    private Integer timeOut;
-    private Integer errorType;
+    private int timeOut;
+    private int errorType;
 
     public Timestamp getStartTime() {
         return startTime;
@@ -41,11 +41,11 @@ public class InterfaceResult extends InterfaceBase{
         this.endTime = endTime;
     }
 
-    public Integer getResponseTimeLength() {
+    public int getResponseTimeLength() {
         return responseTimeLength;
     }
 
-    public void setResponseTimeLength(Integer responseTimeLength) {
+    public void setResponseTimeLength(int responseTimeLength) {
         this.responseTimeLength = responseTimeLength;
     }
 
@@ -65,27 +65,27 @@ public class InterfaceResult extends InterfaceBase{
         this.responseData = responseData;
     }
 
-    public Integer getBatchIndex() {
+    public int getBatchIndex() {
         return batchIndex;
     }
 
-    public void setBatchIndex(Integer batchIndex) {
+    public void setBatchIndex(int batchIndex) {
         this.batchIndex = batchIndex;
     }
 
-    public Integer getBatchType() {
+    public int getBatchType() {
         return batchType;
     }
 
-    public void setBatchType(Integer batchType) {
+    public void setBatchType(int batchType) {
         this.batchType = batchType;
     }
 
-    public Integer getResponseStatusCode() {
+    public int getResponseStatusCode() {
         return responseStatusCode;
     }
 
-    public void setResponseStatusCode(Integer responseStatusCode) {
+    public void setResponseStatusCode(int responseStatusCode) {
         this.responseStatusCode = responseStatusCode;
     }
 
@@ -121,19 +121,19 @@ public class InterfaceResult extends InterfaceBase{
         this.responseReason = responseReason;
     }
 
-    public Integer getTimeOut() {
+    public int getTimeOut() {
         return timeOut;
     }
 
-    public void setTimeOut(Integer timeOut) {
+    public void setTimeOut(int timeOut) {
         this.timeOut = timeOut;
     }
 
-    public Integer getErrorType() {
+    public int getErrorType() {
         return errorType;
     }
 
-    public void setErrorType(Integer errorType) {
+    public void setErrorType(int errorType) {
         this.errorType = errorType;
     }
 

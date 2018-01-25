@@ -6,7 +6,7 @@ package com.magaofei.tool.entity;
  */
 public class InterfaceInfoTags {
 
-    private Integer interfaceInfoId;
-    private Integer interfaceTagsId;
+    private int interfaceInfoId;
+    private int interfaceTagsId;
 
 }

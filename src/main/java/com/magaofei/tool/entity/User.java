@@ -11,7 +11,7 @@ public class User {
     private int id;
     private String nickName;
 
-    public User(String nickName, String userName, UserSexEnum userSex, String password, Integer age, String email, Integer isStaff, Integer isActive, Timestamp dateJoined, Timestamp lastLogin) {
+    public User(String nickName, String userName, UserSexEnum userSex, String password, int age, String email, int isStaff, int isActive, Timestamp dateJoined, Timestamp lastLogin) {
         this.nickName = nickName;
         this.userName = userName;
         this.userSex = userSex;
@@ -27,11 +27,11 @@ public class User {
     private String userName;
     private UserSexEnum userSex;
     private String password;
-    private Integer age;
+    private int age;
 
     private String email;
-    private Integer isStaff;
-    private Integer isActive;
+    private int isStaff;
+    private int isActive;
     private Timestamp dateJoined;
     private Timestamp lastLogin;
 
@@ -40,19 +40,19 @@ public class User {
 //    private Date last_login;
 
 
-    public Integer getIsActive() {
+    public int getIsActive() {
         return isActive;
     }
 
-    public void setIsActive(Integer isActive) {
+    public void setIsActive(int isActive) {
         this.isActive = isActive;
     }
 
-    public Integer getIsStaff() {
+    public int getIsStaff() {
         return isStaff;
     }
 
-    public void setIsStaff(Integer isStaff) {
+    public void setIsStaff(int isStaff) {
         this.isStaff = isStaff;
     }
 
@@ -125,11 +125,11 @@ public class User {
         this.password = password;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }

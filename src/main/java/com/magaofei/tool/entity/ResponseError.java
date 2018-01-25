@@ -2,15 +2,15 @@ package com.magaofei.tool.entity;
 
 public class ResponseError {
 
-    private Integer code = 0;
+    private int code = 0;
     private String message = "请求成功";
     private Object data;
 
-    public Integer getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(Integer code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

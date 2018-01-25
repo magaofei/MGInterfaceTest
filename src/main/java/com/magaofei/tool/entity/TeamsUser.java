@@ -6,7 +6,7 @@ package com.magaofei.tool.entity;
  */
 public class TeamsUser {
 
-    private Integer teamsId;
+    private int teamsId;
 
-    private Integer userId;
+    private int userId;
 }
