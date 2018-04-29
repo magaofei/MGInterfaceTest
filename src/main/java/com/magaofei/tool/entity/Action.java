@@ -16,6 +16,8 @@ public class Action {
      *
      */
 
+    private int id;
+
     private int teamId;
     private int actionName;
 
@@ -27,6 +29,24 @@ public class Action {
     private String actionRule;
 
     private int interfaceId;
+
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(int teamId) {
+        this.teamId = teamId;
+    }
 
     public int getActionName() {
         return actionName;

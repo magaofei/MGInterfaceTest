@@ -19,6 +19,8 @@ package com.magaofei.tool.entity;
  */
 public class ContextVariable {
 
+    private int id;
+
     private int interfaceInfoId;
 
     private int teamId;
@@ -31,12 +33,14 @@ public class ContextVariable {
 
     private InterfaceTestcaseActionEnum interfaceTestcaseActionEnum;
 
-
-
     private ExtractingDataTypeEnum extractingDataTypeEnum;
 
     private String rule;
     private String comeFrom;
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
 
     // SQL  暂不支持SQL
