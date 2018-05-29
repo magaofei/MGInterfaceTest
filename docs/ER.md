@@ -15,6 +15,7 @@ test_case    用例管理
   - config_id    int
   - remark       VarChar
   - status     TINY_INT
+  - current_result TINYINT
 
 
 interface_info   接口信息
@@ -47,7 +48,7 @@ interface_result    接口结果
   - status_code
   - request_headers
   - context_variable   VarChar   保存上下文变量信息  KeyValue
-  - validators   VarChar         保存断言信息       提取到的值和 预期 Value
+  - validators   VarChar         保存断言信息       提取到的值和 预期 KeyValue
   
 
 context_variable   上下文变量
