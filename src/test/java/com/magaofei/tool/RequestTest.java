@@ -1,10 +1,7 @@
 package com.magaofei.tool;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import okhttp3.*;
 import org.junit.Test;
-import org.springframework.scheduling.annotation.Async;
 
 import java.io.IOException;
 
@@ -12,17 +9,38 @@ public class RequestTest {
 
 
     @Test
-    public void run() throws IOException {
-        String url = "http://www.baidu.com";
+    public void run() {
+        String url = "http://httpbin.org/post";
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url(url)
+        RequestBody body = new FormBody.Builder()
+                .add("foo", "bar")
                 .build();
 
-        Response response = client.newCall(request).execute();
+        Request request = new Request.Builder()
+                .url(url)
+                .header("foo", "foo")
+                .post(body)
+                .build();
 
-        System.out.println(response.body().string());
+
+
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if ( response == null ) {
+            return;
+        }
+
+        System.out.println(response.body());
+        System.out.println(response.message());
         System.out.println(response.headers());
+
+
+
 //        return response.body().string();
     }
 
