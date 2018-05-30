@@ -12,6 +12,6 @@ public interface ProjectRepository {
 
     List<Project> getProjectAll ();
 
-    Project getProject();
+    Project getProject(int id);
 
 }

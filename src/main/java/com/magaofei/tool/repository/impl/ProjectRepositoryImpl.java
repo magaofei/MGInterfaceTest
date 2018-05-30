@@ -26,7 +26,7 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     }
 
     @Override
-    public Project getProject() {
+    public Project getProject(int id) {
         // TODO
     }
 }

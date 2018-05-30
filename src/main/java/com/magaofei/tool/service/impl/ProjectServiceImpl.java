@@ -21,5 +21,5 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Project getProject () {return this.projectRepository.getProject()};
+    public Project getProject (int id) {return this.projectRepository.getProject()};
 }
