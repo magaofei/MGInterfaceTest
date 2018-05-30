@@ -1,44 +1,126 @@
 package com.magaofei.tool.entity;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
-/*
-* 接口结果表
-* */
-public class InterfaceResult extends InterfaceBase{
+/**
+ * 接口结果
+ */
+public class InterfaceResult  {
 
+
+    private int id;
+
+    private int interfaceCaseId;
     private int interfaceInfoId;
-
-    private Timestamp startTime;
-    private Timestamp endTime;
+    private int taskId;
+    private int categoryId;
+    private String url;
+    private String name;
+    private String method;
+    private String params;
+    private String headers;
+    private int level;
     private int responseTimeLength;
-    private String resultError;
-    private String responseData;
-    private int batchIndex;
-    private int batchType;
-    private int responseStatusCode;
-    private boolean success;
-
-    private String responseCookies;
+    private int status;
+    private String responseCookie;
+    private int statusCode;
+    private String responseTxt;
     private String responseHeaders;
-    private String responseReason;
-    private int timeOut;
-    private int errorType;
+    private String contextVariable;
+    private String validators;
+    private int sort;
+    private int deleted;
 
-    public Timestamp getStartTime() {
-        return startTime;
+    private Date gmtCreate;
+    private Date gmtModified;
+
+    public int getId() {
+        return id;
     }
 
-    public void setStartTime(Timestamp startTime) {
-        this.startTime = startTime;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Timestamp getEndTime() {
-        return endTime;
+
+    public int getInterfaceCaseId() {
+        return interfaceCaseId;
     }
 
-    public void setEndTime(Timestamp endTime) {
-        this.endTime = endTime;
+    public void setInterfaceCaseId(int interfaceCaseId) {
+        this.interfaceCaseId = interfaceCaseId;
+    }
+
+    public int getInterfaceInfoId() {
+        return interfaceInfoId;
+    }
+
+    public void setInterfaceInfoId(int interfaceInfoId) {
+        this.interfaceInfoId = interfaceInfoId;
+    }
+
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public String getParams() {
+        return params;
+    }
+
+    public void setParams(String params) {
+        this.params = params;
+    }
+
+    public String getHeaders() {
+        return headers;
+    }
+
+    public void setHeaders(String headers) {
+        this.headers = headers;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getResponseTimeLength() {
@@ -49,60 +131,36 @@ public class InterfaceResult extends InterfaceBase{
         this.responseTimeLength = responseTimeLength;
     }
 
-    public String getResultError() {
-        return resultError;
+    public int getStatus() {
+        return status;
     }
 
-    public void setResultError(String resultError) {
-        this.resultError = resultError;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
-    public String getResponseData() {
-        return responseData;
+    public String getResponseCookie() {
+        return responseCookie;
     }
 
-    public void setResponseData(String responseData) {
-        this.responseData = responseData;
+    public void setResponseCookie(String responseCookie) {
+        this.responseCookie = responseCookie;
     }
 
-    public int getBatchIndex() {
-        return batchIndex;
+    public int getStatusCode() {
+        return statusCode;
     }
 
-    public void setBatchIndex(int batchIndex) {
-        this.batchIndex = batchIndex;
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
     }
 
-    public int getBatchType() {
-        return batchType;
+    public String getResponseTxt() {
+        return responseTxt;
     }
 
-    public void setBatchType(int batchType) {
-        this.batchType = batchType;
-    }
-
-    public int getResponseStatusCode() {
-        return responseStatusCode;
-    }
-
-    public void setResponseStatusCode(int responseStatusCode) {
-        this.responseStatusCode = responseStatusCode;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public String getResponseCookies() {
-        return responseCookies;
-    }
-
-    public void setResponseCookies(String responseCookies) {
-        this.responseCookies = responseCookies;
+    public void setResponseTxt(String responseTxt) {
+        this.responseTxt = responseTxt;
     }
 
     public String getResponseHeaders() {
@@ -113,30 +171,53 @@ public class InterfaceResult extends InterfaceBase{
         this.responseHeaders = responseHeaders;
     }
 
-    public String getResponseReason() {
-        return responseReason;
+    public String getContextVariable() {
+        return contextVariable;
     }
 
-    public void setResponseReason(String responseReason) {
-        this.responseReason = responseReason;
+    public void setContextVariable(String contextVariable) {
+        this.contextVariable = contextVariable;
     }
 
-    public int getTimeOut() {
-        return timeOut;
+    public String getValidators() {
+        return validators;
     }
 
-    public void setTimeOut(int timeOut) {
-        this.timeOut = timeOut;
+    public void setValidators(String validators) {
+        this.validators = validators;
     }
 
-    public int getErrorType() {
-        return errorType;
+    public int getSort() {
+        return sort;
     }
 
-    public void setErrorType(int errorType) {
-        this.errorType = errorType;
+    public void setSort(int sort) {
+        this.sort = sort;
     }
 
+    public int getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(int deleted) {
+        this.deleted = deleted;
+    }
+
+    public Date getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(Date gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+
+    public Date getGmtModified() {
+        return gmtModified;
+    }
+
+    public void setGmtModified(Date gmtModified) {
+        this.gmtModified = gmtModified;
+    }
 
 
 

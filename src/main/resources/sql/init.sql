@@ -46,7 +46,7 @@ CREATE TABLE `interface_info` (
 CREATE TABLE `interface_result` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `interface_info_id`  int(11) unsigned NOT NULL DEFAULT 0 COMMENT "接口信息表 id",
-  `test_case_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "用例表 id",
+  `interface_case_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "用例表 id",
   `task_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "任务表id",
   `category_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "分类表 id ",
   `url` varchar(100) NOT NULL DEFAULT "" COMMENT "接口 URL ",
@@ -57,7 +57,6 @@ CREATE TABLE `interface_result` (
   `level` TINYINT (1) unsigned NOT NULL DEFAULT 4 COMMENT "issue 等级, 0-4",
   `response_time_length` SMALLINT (4) unsigned NOT NULL DEFAULT 0 COMMENT "响应时间",
   `status` TINYINT(1) unsigned NOT NULL DEFAULT 0 COMMENT "0 打开, 1 确认, 2 解决, 3 误判, 4 标记为不会修复",
-  `create_date` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
   `response_cookie` varchar(1000) NOT NULL DEFAULT "" COMMENT "响应cookie",
   `status_code` SMALLINT (4) NOT NULL DEFAULT 0 COMMENT "响应码",
   `interface_result_response_txt_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "接口结果响应体id ",
