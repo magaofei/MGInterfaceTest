@@ -22,7 +22,6 @@ CREATE TABLE `interface_case` (
   `remark` VARCHAR (200) NOT NULL DEFAULT "" COMMENT "备注",
   `status` TINYINT(1) unsigned NOT NULL DEFAULT 0 COMMENT "0 启用  1 禁用",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `current_result` TINYINT(1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未定, 1成功 2 失败",
   `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
   `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
@@ -30,8 +29,7 @@ CREATE TABLE `interface_case` (
 
 CREATE TABLE `interface_info` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `test_case_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "用例表 id",
-  `task_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "任务表id",
+  `interface_case_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "用例表 id",
   `category_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "分类表 id ",
   `url` varchar(150) NOT NULL DEFAULT "" COMMENT "接口 URL ",
   `name` varchar(10) NOT NULL DEFAULT "" COMMENT "接口名",
@@ -128,10 +126,8 @@ CREATE TABLE `task` (
   `id` int (11) unsigned NOT NULL AUTO_INCREMENT,
   `project_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "项目表 id",
   `run_time` VARCHAR (20) NOT NULL DEFAULT "" COMMENT "任务时间",
-  `current_result` TINYINT(1) NOT NULL DEFAULT 0 COMMENT "0 未执行  1成功  2失败",
   `status` TINYINT(1) NOT NULL DEFAULT 0 COMMENT "0 待运行 1停止 2 删除",
   `remark` VARCHAR (200) NOT NULL DEFAULT "" COMMENT "备注",
-  `current_run_time` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最近一次执行时间",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
   `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
   `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",

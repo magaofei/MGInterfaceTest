@@ -1,12 +1,25 @@
 package com.magaofei.tool.entity;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 /**
  *
- * 接口需要支持前置动作和后置动作
- * 还有检查点(断言)和上下文变量功能(参数替换)
+ *
+ *
  */
-public class InterfaceInfo extends InterfaceBase {
-    private Timestamp lastUpdateDate;
+public class InterfaceInfo  {
+    private int id;
+    private int interface_case_id;
+    private int category_id;
+    private String url;
+    private String name;
+    private String method;
+    private String params;
+    private String headers;
+    private int sort;
+    private int deleted;
+
+    private Date gmtCreate;
+    private Date gmtModified;
+
 }
