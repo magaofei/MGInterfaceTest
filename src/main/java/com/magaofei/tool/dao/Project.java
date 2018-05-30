@@ -1,4 +1,4 @@
-package com.magaofei.tool.entity;
+package com.magaofei.tool.dao;
 
 import java.util.Date;
 
@@ -8,6 +8,7 @@ import java.util.Date;
  */
 
 public class Project {
+
     private int id;
     private String name;
     private String email;
@@ -20,12 +21,15 @@ public class Project {
     private Date gmtModified;
     private int deleted;
 
-    public Project(int id, String name, String email, String dingtalkUrl, String remark, String host, String proxy, int environment, Date gmtModified, int deleted) {
+    public Project() {
+    }
+
+
+    Project(String name, String email, String dingtalkUrl, String remark, String host, String proxy, int environment, Date gmtModified) {
 
         if (gmtModified == null) {
             this.gmtModified = new Date();
         }
-        this.id = id;
         this.name = name;
         this.email = email;
         this.dingtalkUrl = dingtalkUrl;
@@ -35,8 +39,12 @@ public class Project {
         this.environment = environment;
         this.gmtCreate = new Date();
         this.gmtModified = gmtModified;
-        this.deleted = deleted;
 
+    }
+
+    @Override
+    public String toString() {
+        return getName() + getEmail() + getHost() + getGmtModified();
     }
 
     public int getDeleted() {

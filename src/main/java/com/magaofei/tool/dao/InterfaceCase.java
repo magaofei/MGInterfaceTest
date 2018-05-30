@@ -1,4 +1,4 @@
-package com.magaofei.tool.entity;
+package com.magaofei.tool.dao;
 
 import java.util.Date;
 
