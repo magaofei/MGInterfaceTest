@@ -25,7 +25,7 @@ public class Project {
     }
 
 
-    Project(String name, String email, String dingtalkUrl, String remark, String host, String proxy, int environment, Date gmtModified) {
+    Project(String name, String email, String dingtalkUrl, String remark, String host, String proxy, int environment) {
 
         if (gmtModified == null) {
             this.gmtModified = new Date();
@@ -38,7 +38,7 @@ public class Project {
         this.proxy = proxy;
         this.environment = environment;
         this.gmtCreate = new Date();
-        this.gmtModified = gmtModified;
+        this.gmtModified = new Date();
 
     }
 
