@@ -6,7 +6,6 @@ project   项目管理
   - email   VarChar
   - dingtalk_url    VarChar
   - remark    VarChar
-  
 
 test_case    用例管理
   - name     VarChar
@@ -15,7 +14,8 @@ test_case    用例管理
   - config_id    int
   - remark       VarChar
   - status     TINY_INT
-  - current_result TINYINT
+  - current_result TINYINT     
+  - environment   TINYINT  环境id 测试 预发布 线上
 
 
 interface_info   接口信息
@@ -74,7 +74,7 @@ task   定时任务
   - status     Tiny_Int    (待运行, 停止)
   - remark    VarChar      备注
   - time      DATETIME     执行时间
-  
+
 
 category  接口标签
   - name
