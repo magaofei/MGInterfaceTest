@@ -16,6 +16,8 @@ test_case    用例管理
   - status     TINY_INT
   - current_result TINYINT     
   - environment   TINYINT  环境id 测试 预发布 线上
+  - create_date
+  - last_update_date
 
 
 interface_info   接口信息
@@ -26,9 +28,7 @@ interface_info   接口信息
   - method   VarChar
   - params    VarChar
   - headers  VarChar
-  - context_variable_id   int
-  - validators_id   int
-
+  - sort     TINYINT
 
 interface_result    接口结果
   - interface_info_id   int
@@ -41,7 +41,7 @@ interface_result    接口结果
   - headers  VarChar
   - response_time   SMALL_INT
   - status    TINY_INT    (打开, 确认, 解决, 误判, 标记为不会修复)
-  - time    DATETIME
+  - create_date    DATETIME
   - response_txt
   - response_headers
   - response_cookie
@@ -64,6 +64,7 @@ validators   断言
   - method    TINY_INT   (JSON, RE, ALL)
   - way       TINY_INT   (==, <=, <, >=, >, IN)
   - expect_value  VarChar
+  - actual_value
 
   
 task   定时任务
@@ -80,7 +81,7 @@ category  接口标签
   - name
 
 config   配置管理 
-  - host              VarChar
+  - host             VarChar
   - headers          VarChar
   - variable_binds   VarChar
   
