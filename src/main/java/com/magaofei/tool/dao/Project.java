@@ -1,6 +1,6 @@
 package com.magaofei.tool.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * 项目
@@ -19,6 +19,25 @@ public class Project {
     private Date gmtCreate;
     private Date gmtModified;
     private int deleted;
+
+    public Project(int id, String name, String email, String dingtalkUrl, String remark, String host, String proxy, int environment, Date gmtModified, int deleted) {
+
+        if (gmtModified == null) {
+            this.gmtModified = new Date();
+        }
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dingtalkUrl = dingtalkUrl;
+        this.remark = remark;
+        this.host = host;
+        this.proxy = proxy;
+        this.environment = environment;
+        this.gmtCreate = new Date();
+        this.gmtModified = gmtModified;
+        this.deleted = deleted;
+
+    }
 
     public int getDeleted() {
         return deleted;

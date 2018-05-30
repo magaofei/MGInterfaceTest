@@ -9,8 +9,8 @@ CREATE TABLE `project` (
   `proxy` VARCHAR (100) NOT NULL DEFAULT "" COMMENT "接口 代理",
   `environment` TINYINT(1) unsigned NOT NULL DEFAULT 0 COMMENT "0 测试  1 线上  2预发布",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -22,8 +22,8 @@ CREATE TABLE `interface_case` (
   `remark` VARCHAR (200) NOT NULL DEFAULT "" COMMENT "备注",
   `status` TINYINT(1) unsigned NOT NULL DEFAULT 0 COMMENT "0 启用  1 禁用",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -38,8 +38,8 @@ CREATE TABLE `interface_info` (
   `headers` varchar(1000) NOT NULL DEFAULT  "" COMMENT "请求头",
   `sort` TINYINT(4) NOT NULL DEFAULT 0 COMMENT "排序 从0开始",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -65,8 +65,8 @@ CREATE TABLE `interface_result` (
   `interface_result_validators_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "接口结果验证表 id ",
   `sort` TINYINT(4) NOT NULL DEFAULT 0 COMMENT "排序 从0开始",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -102,8 +102,8 @@ CREATE TABLE `interface_context_variable` (
   `method` TINYINT(1) NOT NULL DEFAULT 0 COMMENT "0 JSON 1 RE 2 ALL",
   `rules` VARCHAR (50) NOT NULL DEFAULT "" COMMENT "规则",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -116,8 +116,8 @@ CREATE TABLE `interface_validators` (
   `expect_value` VARCHAR (500) NOT NULL DEFAULT "" COMMENT "预期值",
   `actual_value` VARCHAR (500) NOT NULL DEFAULT "" COMMENT "实际值",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -128,8 +128,8 @@ CREATE TABLE `task` (
   `status` TINYINT(1) NOT NULL DEFAULT 0 COMMENT "0 待运行 1停止 2 删除",
   `remark` VARCHAR (200) NOT NULL DEFAULT "" COMMENT "备注",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -137,8 +137,8 @@ CREATE TABLE `category` (
   `id` int (11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(10) NOT NULL DEFAULT "" COMMENT "分类名称",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -149,8 +149,8 @@ CREATE TABLE `config` (
   `variable_binds` VARCHAR (1000) NOT NULL DEFAULT "" COMMENT "预设变量绑定",
   `proxy` VARCHAR (200) NOT NULL DEFAULT "" COMMENT "代理设置",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
-  `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
-  `gmt_modified` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "最后更新时间",
+  `gmt_create` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "创建时间",
+  `gmt_modified` datetime(6) NOT NULL DEFAULT "1970-01-01 00:00:00" COMMENT "最后更新时间",
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 

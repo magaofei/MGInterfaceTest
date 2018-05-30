@@ -1,6 +1,6 @@
 package com.magaofei.tool.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * 接口测试用例
