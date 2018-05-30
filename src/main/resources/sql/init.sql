@@ -6,6 +6,7 @@ CREATE TABLE `project` (
   `dingtalk_url` varchar (100) NOT NULL DEFAULT "",
   `remark` VARCHAR (200) NOT NULL DEFAULT "",
   `host` varchar(100) NOT NULL DEFAULT "" COMMENT "接口 Host ",
+  `proxy` VARCHAR (100) NOT NULL DEFAULT "" COMMENT "接口 代理",
   `environment` TINYINT(1) unsigned NOT NULL DEFAULT 0 COMMENT "0 测试  1 线上  2预发布",
   `is_deleted` TINYINT (1) unsigned NOT NULL DEFAULT 0 COMMENT "0 未删除  1已删除",
   `gmt_create` datetime(6) NOT NULL DEFAULT "1070-01-01 00:00:00" COMMENT "创建时间",
