@@ -18,8 +18,8 @@ public class ProjectController {
     private ProjectService projectService;
 
     @RequestMapping(method = RequestMethod.GET)
-    private List<Project> all () {
-        return projectService.all();
+    private List<Project> all (@PathVariable int page, @PathVariable int size) {
+        return projectService.all(page, size);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

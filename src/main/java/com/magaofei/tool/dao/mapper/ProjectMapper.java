@@ -16,6 +16,8 @@ public interface ProjectMapper {
 
     /**
      * 返回所有项目
+     * @param limit
+     * @param offset
      * @return Result<Project>
      *
      *         @Results({
@@ -29,8 +31,8 @@ public interface ProjectMapper {
      *     })
      */
     @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM "
-            + TABLE_NAME + " WHERE is_deleted = 0 ORDER BY gmt_modified DESC")
-    List<Project> all();
+            + TABLE_NAME + " WHERE is_deleted = 0 ORDER BY gmt_modified DESC LIMIT #{limit}, offset #{offset}")
+    List<Project> all(@Param("limit") int limit, @Param("offset") int offset);
 
     /**
      * 创建项目
@@ -45,5 +47,14 @@ public interface ProjectMapper {
     @Update("UPDATE " + TABLE_NAME + " SET name = #{name}, email = #{email}, dingtalk_url = #{dingtalkUrl}, host = #{host}, " +
             "proxy = #{proxy}, environment = #{environment}, gmt_modified = NOW() WHERE id = #{id}")
     void update(Project project);
+
+    /**
+     * 获取项目 by id
+     * @param id
+     * @return
+     */
+    @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM " + TABLE_NAME +
+    "WHERE id = #{id}")
+    Project getProjectById(int id);
 
 }

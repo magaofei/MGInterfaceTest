@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ProjectService {
 
-    List<Project> all();
+    List<Project> all(int page, int size);
 
     Project getProject(int id);
 }

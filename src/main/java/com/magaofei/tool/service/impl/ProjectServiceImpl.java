@@ -16,8 +16,8 @@ public class ProjectServiceImpl implements ProjectService {
 
 
     @Override
-    public List<Project> all() {
-        return this.projectRepository.getProjectAll();
+    public List<Project> all(int page, int size) {
+        return this.projectRepository.getProjectAll(page, size);
     }
 
     @Override
