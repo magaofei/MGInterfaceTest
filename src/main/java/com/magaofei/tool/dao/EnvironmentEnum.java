@@ -1,5 +1,5 @@
 package com.magaofei.tool.dao;
 
 public enum EnvironmentEnum {
-    DEVELOPMENT,QA,PRODUCT
+    DEVELOPMENT, QA, PRE_RELEASE, PRODUCT
 }
