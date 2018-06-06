@@ -3,10 +3,7 @@ package com.magaofei.tool.controller;
 import com.magaofei.tool.dao.Project;
 import com.magaofei.tool.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,13 +15,14 @@ public class ProjectController {
     private ProjectService projectService;
 
     @RequestMapping(method = RequestMethod.GET)
-    private List<Project> all (@PathVariable int page, @PathVariable int size) {
-        return projectService.all(page, size);
+    private List<Project> all (@RequestParam int size, @RequestParam int page) {
+        return projectService.all(size, page);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    private Project getProject(@PathVariable int id) {
-        return projectService.getProject(id);
-    }
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    private Project getProject(@PathVariable int id) {
+//        return projectService.getProject(id);
+//    }
+
 
 }

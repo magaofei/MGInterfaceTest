@@ -16,10 +16,10 @@ public class ProjectServiceImpl implements ProjectService {
 
 
     @Override
-    public List<Project> all(int page, int size) {
-        return this.projectRepository.getProjectAll(page, size);
+    public List<Project> all(int size, int page) {
+        return this.projectRepository.getProjectAll(size, page);
     }
 
-    @Override
-    public Project getProject (int id) {return this.projectRepository.getProject()};
+//    @Override
+//    public Project getProject (int id) {return this.projectRepository.getProject()};
 }

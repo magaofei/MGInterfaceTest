@@ -55,13 +55,13 @@ public class ProjectTest {
 //    }
 
 
-    @Test
-    public void testProjectAll() {
-        List<Project> projects = projectMapper.all();
-        for (Project p : projects) {
-            System.out.println(p);
-        }
-    }
+//    @Test
+//    public void testProjectAll() {
+//        List<Project> projects = projectMapper.all();
+//        for (Project p : projects) {
+//            System.out.println(p);
+//        }
+//    }
 
 
 }
