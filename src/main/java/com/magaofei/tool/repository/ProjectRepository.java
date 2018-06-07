@@ -19,16 +19,16 @@ public class ProjectRepository {
     @Autowired
     private ProjectMapper projectMapper;
 
-    public List<Project> getProjectAll(int limit, int offset) {
-//        Map<String, Object> data = new HashMap<>();
-//        data.put("limit", limit);
-//        data.put("offset", offset);
-//        return projectMapper.all(data);
-        
-        return projectMapper.all(limit, offset);
-//        Page<Project> page = PageHelper.startPage(offset, limit);
-
-    }
+//    public List<Project> getProjectAll(int limit, int offset) {
+////        Map<String, Object> data = new HashMap<>();
+////        data.put("limit", limit);
+////        data.put("offset", offset);
+////        return projectMapper.all(data);
+//
+//        return projectMapper.all(limit, offset);
+////        Page<Project> page = PageHelper.startPage(offset, limit);
+//
+//    }
 
 
     public List<Project> getProjects(int page, int size) {
