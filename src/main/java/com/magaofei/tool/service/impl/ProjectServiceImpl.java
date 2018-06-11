@@ -21,11 +21,11 @@ public class ProjectServiceImpl implements ProjectService {
 
 
     @Override
-    public List<Project> all(int size, int page) {
+    public List<Project> listProjects(int size, int page) {
         Map<String, Object> data = new HashMap<>();
         data.put("limit", size);
         data.put("offset", page);
-        return projectMapper.all(data);
+        return projectMapper.listProjects(data);
     }
 
 

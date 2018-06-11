@@ -15,8 +15,8 @@ public class ProjectController {
     private ProjectService projectService;
 
     @RequestMapping(method = RequestMethod.GET)
-    private List<Project> all (@RequestParam int size, @RequestParam int page) {
-        return projectService.all(size, page);
+    private List<Project> listProjects (@RequestParam int size, @RequestParam int page) {
+        return projectService.listProjects(size, page);
     }
 
 //    @RequestMapping(value = "/{id}", method = RequestMethod.GET)

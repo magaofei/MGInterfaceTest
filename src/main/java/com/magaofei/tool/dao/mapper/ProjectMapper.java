@@ -35,7 +35,7 @@ public interface ProjectMapper {
 
     @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM "
             + TABLE_NAME + " WHERE is_deleted = 0 ORDER BY gmt_modified DESC LIMIT #{limit} offset #{offset}")
-    List<Project> all(Map<String, Object> map);
+    List<Project> listProjects(Map<String, Object> map);
 
 
     @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM "
