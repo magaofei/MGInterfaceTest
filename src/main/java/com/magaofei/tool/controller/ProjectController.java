@@ -1,7 +1,9 @@
 package com.magaofei.tool.controller;
 
+import com.magaofei.tool.dao.Page;
 import com.magaofei.tool.dao.Project;
 import com.magaofei.tool.service.ProjectService;
+import com.magaofei.tool.util.BindingErrors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -25,8 +27,12 @@ public class ProjectController {
     private ProjectService projectService;
 
     @RequestMapping(method = RequestMethod.GET)
-    private List<Project> listProjects (@RequestParam int size, @RequestParam int page) {
-        return projectService.listProjects(size, page);
+    private ResponseEntity<?> listProjects (@Valid Page page, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().body(BindingErrors.errors(bindingResult));
+        }
+        List<Project> projects = projectService.listProjects(page.getSize(), page.getStart());
+        return ResponseEntity.ok().body(projects);
     }
 
 

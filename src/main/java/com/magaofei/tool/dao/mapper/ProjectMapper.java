@@ -46,7 +46,7 @@ public interface ProjectMapper {
      */
     @Insert("INSERT INTO " + TABLE_NAME + " (name, email, dingtalk_url, remark, host, proxy, environment, gmt_modified, gmt_create) VALUES " +
             "(#{name}, #{email}, #{dingtalkUrl}, #{remark}, #{host}, #{proxy}, #{environment}, NOW(), NOW() )")
-    @Options(useGeneratedKeys = true)
+    @Options(useGeneratedKeys = true, keyColumn = "id")
     int saveProject(Project project);
 
 
