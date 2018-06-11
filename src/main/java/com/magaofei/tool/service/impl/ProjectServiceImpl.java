@@ -28,7 +28,32 @@ public class ProjectServiceImpl implements ProjectService {
         return projectMapper.listProjects(data);
     }
 
+    @Override
+    public Project getProject(int id) {
+        return projectMapper.getProjectById(id);
+    }
 
-//    @Override
+    @Override
+    public int saveProject(Project project) {
+        /**
+         * 处理空数据
+         */
+        int id = projectMapper.saveProject(project);
+        System.out.println(id);
+        return id;
+
+    }
+
+    @Override
+    public void updateProject(Project project) {
+        projectMapper.updateProject(project);
+    }
+
+    @Override
+    public void removeProject(Project project) {
+        projectMapper.removeProject(project);
+    }
+
+    //    @Override
 //    public Project getProject (int id) {return this.projectRepository.getProject()};
 }

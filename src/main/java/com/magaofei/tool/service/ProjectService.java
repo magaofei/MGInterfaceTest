@@ -8,5 +8,12 @@ public interface ProjectService {
 
     List<Project> listProjects(int size, int page);
 
-//    Project getProject(int id);
+    Project getProject(int id);
+
+    void updateProject(Project project);
+
+    void removeProject(Project project);
+
+    int saveProject(Project project);
+
 }

@@ -1,5 +1,8 @@
 package com.magaofei.tool.dao;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -10,13 +13,31 @@ import java.util.Date;
 public class Project {
 
     private int id;
+
+    @NotNull
+    @Size(min = 1, max = 20)
     private String name;
+
+    @NotNull
+    @Email
+    @Size(min = 1, max = 50)
     private String email;
+
+    @NotNull
     private String dingtalkUrl;
+
+    @NotNull
     private String remark;
+
+    @NotNull
     private String host;
+
+    @NotNull
     private String proxy;
-    private int environment;
+
+    @NotNull
+    private Integer environment;
+
     private Date gmtCreate;
     private Date gmtModified;
     private int deleted;
@@ -45,6 +66,14 @@ public class Project {
     @Override
     public String toString() {
         return getName() + getEmail() + getHost() + getGmtModified();
+    }
+
+    public Integer getEnvironment() {
+        return environment;
+    }
+
+    public void setEnvironment(Integer environment) {
+        this.environment = environment;
     }
 
     public int getDeleted() {
@@ -112,13 +141,6 @@ public class Project {
         this.proxy = proxy;
     }
 
-    public int getEnvironment() {
-        return environment;
-    }
-
-    public void setEnvironment(int environment) {
-        this.environment = environment;
-    }
 
     public Date getGmtCreate() {
         return gmtCreate;

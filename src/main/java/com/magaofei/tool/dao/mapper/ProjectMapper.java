@@ -33,29 +33,29 @@ public interface ProjectMapper {
      */
 
 
-    @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM "
+    @Select(
+            "SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM "
             + TABLE_NAME + " WHERE is_deleted = 0 ORDER BY gmt_modified DESC LIMIT #{limit} offset #{offset}")
     List<Project> listProjects(Map<String, Object> map);
-
-
-    @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM "
-            + TABLE_NAME + " WHERE is_deleted = 0 ORDER BY gmt_modified DESC LIMIT #{limit}, offset #{offset}")
-    List<Project> getProjectsAll(@Param("limit") int limit, @Param("offset") int offset);
 
 
     /**
      * 创建项目
      * @param project 项目参数
+     * @return id
      */
     @Insert("INSERT INTO " + TABLE_NAME + " (name, email, dingtalk_url, remark, host, proxy, environment, gmt_modified, gmt_create) VALUES " +
             "(#{name}, #{email}, #{dingtalkUrl}, #{remark}, #{host}, #{proxy}, #{environment}, NOW(), NOW() )")
     @Options(useGeneratedKeys = true)
-    int create(Project project) throws Exception;
+    int saveProject(Project project);
 
 
     @Update("UPDATE " + TABLE_NAME + " SET name = #{name}, email = #{email}, dingtalk_url = #{dingtalkUrl}, host = #{host}, " +
             "proxy = #{proxy}, environment = #{environment}, gmt_modified = NOW() WHERE id = #{id}")
-    void update(Project project);
+    void updateProject(Project project);
+
+    @Update("UPDATE " + TABLE_NAME + " SET is_deleted = 1, gmt_modified = NOW() WHERE id = #{id}")
+    void removeProject(Project project);
 
     /**
      * 获取项目 by id
