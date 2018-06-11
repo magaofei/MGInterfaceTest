@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author mark
@@ -32,7 +34,11 @@ public class ProjectController {
             return ResponseEntity.badRequest().body(BindingErrors.errors(bindingResult));
         }
         List<Project> projects = projectService.listProjects(page.getSize(), page.getStart());
-        return ResponseEntity.ok().body(projects);
+        Map<String, Object> map = new HashMap<>();
+        map.put("start", page.getStart());
+        map.put("size", page.getSize());
+        map.put("data", projects);
+        return ResponseEntity.ok().body(map);
     }
 
 
