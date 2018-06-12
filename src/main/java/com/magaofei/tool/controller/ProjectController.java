@@ -49,7 +49,6 @@ public class ProjectController {
             return ResponseEntity.badRequest().body(BindingErrors.errors(bindingResult));
         }
 
-
         projectService.saveProject(project);
         return ResponseEntity.ok().body(project);
 
@@ -69,7 +68,11 @@ public class ProjectController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    private ResponseEntity<?> getProject(@PathVariable int id) {
+    private ResponseEntity<?> getProject(@PathVariable Integer id) {
+        if (null == id) {
+            return ResponseEntity.badRequest().body("id is null");
+        }
+
         Project project = projectService.getProject(id);
         if (project == null) {
             return ResponseEntity.notFound().build();

@@ -3,6 +3,7 @@ package com.magaofei.tool.dao.mapper;
 import com.magaofei.tool.dao.Project;
 import org.apache.ibatis.annotations.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -62,8 +63,13 @@ public interface ProjectMapper {
      * @param id
      * @return
      */
-    @Select("SELECT id, name, email, dingtalk_url, host, environment, gmt_modified FROM " + TABLE_NAME +
-    "WHERE id = #{id}")
+    @Select("SELECT id, name, email, dingtalk_url, remark, host, proxy, environment, gmt_create, gmt_modified FROM " + TABLE_NAME +
+    " WHERE id = #{id}")
+    @Results({
+            @Result(property = "gmtCreate", column = "gmt_create"),
+            @Result(property = "gmtModified", column = "gmt_modified"),
+            @Result(property = "dingtalkUrl", column = "dingtalk_url")
+    })
     Project getProjectById(int id);
 
 }

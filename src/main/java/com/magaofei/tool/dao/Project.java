@@ -40,7 +40,6 @@ public class Project {
 
     private Date gmtCreate;
     private Date gmtModified;
-    private int deleted;
 
     public Project() {
     }
@@ -63,6 +62,20 @@ public class Project {
 
     }
 
+    Project(int id, String name, String email, String dingtalkUrl, String remark, String host, String proxy, int environment, Date gmtCreate, Date gmtModified) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dingtalkUrl = dingtalkUrl;
+        this.remark = remark;
+        this.host = host;
+        this.proxy = proxy;
+        this.environment = environment;
+        this.gmtCreate = gmtCreate;
+        this.gmtModified = gmtModified;
+    }
+
+
     @Override
     public String toString() {
         return getName() + getEmail() + getHost() + getGmtModified();
@@ -74,14 +87,6 @@ public class Project {
 
     public void setEnvironment(Integer environment) {
         this.environment = environment;
-    }
-
-    public int getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(int deleted) {
-        this.deleted = deleted;
     }
 
 
