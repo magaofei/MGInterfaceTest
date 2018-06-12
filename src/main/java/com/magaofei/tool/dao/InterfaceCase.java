@@ -9,6 +9,8 @@ import java.util.Date;
 public class InterfaceCase {
 
     private int id;
+
+    private String name;
     private int projectId;
     private int configId;
     private int level;
@@ -17,6 +19,14 @@ public class InterfaceCase {
     private int deleted;
     private Date gmtCreate;
     private Date gmtModified;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;

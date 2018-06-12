@@ -16,6 +16,7 @@ CREATE TABLE `project` (
 
 CREATE TABLE `interface_case` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar (15) NOT NULL DEFAULT "",
   `project_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "项目表 id",
   `config_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "配置表 id",
   `level` TINYINT (1) unsigned NOT NULL DEFAULT 4 COMMENT "issue 等级, 0-4",
