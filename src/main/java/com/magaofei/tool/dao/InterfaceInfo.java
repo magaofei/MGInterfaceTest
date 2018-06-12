@@ -10,6 +10,9 @@ import java.util.Date;
 public class InterfaceInfo  {
 
 
+    public InterfaceInfo() {
+    }
+
     private int id;
     private int interfaceCaseId;
     private int categoryId;
