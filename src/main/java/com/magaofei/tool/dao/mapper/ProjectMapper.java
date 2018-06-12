@@ -41,13 +41,13 @@ public interface ProjectMapper {
 
     /**
      * 创建项目
-     * @param project 项目参数
-     * @return id
+     * @param project 项目参数 会自动填充 id
+     *
      */
     @Insert("INSERT INTO " + TABLE_NAME + " (name, email, dingtalk_url, remark, host, proxy, environment, gmt_modified, gmt_create) VALUES " +
             "(#{name}, #{email}, #{dingtalkUrl}, #{remark}, #{host}, #{proxy}, #{environment}, NOW(), NOW() )")
-    @Options(useGeneratedKeys = true, keyColumn = "id")
-    int saveProject(Project project);
+    @Options(useGeneratedKeys = true)
+    void saveProject(Project project);
 
 
     @Update("UPDATE " + TABLE_NAME + " SET name = #{name}, email = #{email}, dingtalk_url = #{dingtalkUrl}, host = #{host}, " +

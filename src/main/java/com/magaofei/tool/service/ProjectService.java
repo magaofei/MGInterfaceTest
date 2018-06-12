@@ -14,6 +14,6 @@ public interface ProjectService {
 
     void removeProject(Project project);
 
-    int saveProject(Project project);
+    void saveProject(Project project);
 
 }

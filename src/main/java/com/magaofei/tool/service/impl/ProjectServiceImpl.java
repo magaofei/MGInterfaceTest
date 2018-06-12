@@ -34,13 +34,14 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public int saveProject(Project project) {
+    public void saveProject(Project project) {
         /**
          * 处理空数据
          */
-        int id = projectMapper.saveProject(project);
-        System.out.println(id);
-        return id;
+        projectMapper.saveProject(project);
+//        System.out.println(project);
+//        System.out.println(project.getId());
+//        return project;
 
     }
 

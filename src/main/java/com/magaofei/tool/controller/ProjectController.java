@@ -7,12 +7,12 @@ import com.magaofei.tool.util.BindingErrors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.net.URI;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -46,26 +46,25 @@ public class ProjectController {
     private ResponseEntity<?> saveProject(@Valid  Project project, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
-            List<String> errorMessage = new ArrayList<>();
-            List<FieldError> fieldErrors = bindingResult.getFieldErrors();
-            for (FieldError fieldError : fieldErrors) {
-                errorMessage.add(fieldError.getField() + " " + fieldError.getObjectName() + " " + fieldError.getDefaultMessage());
-            }
-
-            return ResponseEntity.badRequest().body(errorMessage);
+            return ResponseEntity.badRequest().body(BindingErrors.errors(bindingResult));
         }
 
 
-        int projectId = projectService.saveProject(project);
+        projectService.saveProject(project);
+        return ResponseEntity.ok().body(project);
+
+        /**
+         *
         URI location = null;
 
         try {
-            location = new URI("http://www.example.com/project/" + projectId);
+            location = new URI("http://www.example.com/project/" + project.getId());
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }        return ResponseEntity.created(location).body(project);
 
-        return ResponseEntity.created(location).build();
+         */
+
 
     }
 
