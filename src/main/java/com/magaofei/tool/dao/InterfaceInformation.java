@@ -7,10 +7,10 @@ import java.util.Date;
  *
  *
  */
-public class InterfaceInfo  {
+public class InterfaceInformation {
 
 
-    public InterfaceInfo() {
+    public InterfaceInformation() {
     }
 
     private int id;
