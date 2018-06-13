@@ -44,8 +44,8 @@ public interface InterfaceCaseMapper {
     " VALUES ( #{name}, #{projectId}, #{configId}, #{level}, #{remark}, #{status}, NOW(), NOW() )")
     void saveInterfaceCase(InterfaceCase interfaceCase);
 
-    @Update("UPDATE SET name = #{name}, project_id = #{projectId} config_id = #{configId} level = #{level}, remark = #{remark} " +
-            "status = #{status} gmt_modified = NOW() FROM " + TABLE_NAME)
+    @Update("UPDATE " + TABLE_NAME + " SET name = #{name}, project_id = #{projectId} config_id = #{configId} level = #{level}, remark = #{remark} " +
+            "status = #{status} gmt_modified = NOW() WHERE id = #{id}" )
     void updateInterfaceCase(InterfaceCase interfaceCase);
 
 

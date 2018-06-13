@@ -31,8 +31,20 @@ public interface InterfaceInformationMapper {
     @Update("<script>" +
             "UPDATE " + TABLE_NAME + " <SET> " +
             "<if test='name != null'>name = #{name}, </if> " +
-            "<if test='interface_case_id != null'>interface_case_id = #{interface_case_id}, </if> " +
-            "<if test='category_id != null'>category_id = #{category_id}, </if> ")
+            "<if test='interface_case_id != null'>interface_case_id = #{interfaceCaseId}, </if> " +
+            "<if test='category_id != null'>category_id = #{categoryId}, </if> " +
+            "<if test='url != url'>url = #{url}, </if> " +
+            "<if test='method != method'>method = #{method}, </if> " +
+            "<if test='params != params'>params = #{params}, </if> " +
+            "<if test='headers != headers'>headers = #{headers}, </if> " +
+            "<if test='sort != sort'>sort = #{sort}, </if> " +
+            "<set>" +
+            "WHERE id = #{id}" +
+            "</script>"
+    )
     void updateInterfaceInformation(InterfaceInformation interfaceInformation);
+
+    @Update("UPDATE " + TABLE_NAME + " SET is_deleted = #{deleted}")
+    void removeInterfaceInformaton(InterfaceInformation interfaceInformation);
 
 }
