@@ -2,15 +2,9 @@ package com.magaofei.tool.dao;
 
 import java.util.Date;
 
-public class InterfaceConfig {
-
+public class InterfaceCategory {
     private int id;
-    private String url;
-    private String headers;
-    private String variableBinds;
-    private String proxy;
-
-
+    private String name;
     private int deleted;
     private Date gmtCreate;
     private Date gmtModified;
