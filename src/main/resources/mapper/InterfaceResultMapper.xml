@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--你接口的包名是com.abc.dao,接口名是NameMapper.java，那么你的mapper.xml的namespace应该是com.abc.dao.NameMapper-->
+<mapper namespace="com.magaofei.tool.dao.mapper.InterfaceResultMapper" >
+
+    <!--resultMap对应的是表与实体类的映射  - type 数据库表对应的实体类，别名或完整类名都可以-->
+    <resultMap id="BaseResultMap" type="com.magaofei.tool.dao.InterfaceTask" >
+        <!-- 结果集的主键 -->
+        <id column="id" property="id" />
+        <!-- 普通的列  -column 是数据库中字段， property是实体类中字段-->
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+
+        <result column="response_time_length" property="responseTimeLength" />
+        <result column="response_cookie" property="responseCookie" />
+        <result column="status_code" property="statusCode" />
+        <result column="response_txt" property="responseTxt" />
+        <result column="response_headers" property="responseHeaders" />
+        <result column="context_variable" property="contextVariable" />
+
+        <result column="interface_case_id" property="interfaceCaseId" />
+        <result column="task_id" property="taskId" />
+
+
+    </resultMap>
+
+
+    <!--parameterType(输入类型)、resultType(输出类型)-->
+    <select id="listInterfaceResults" resultMap="BaseResultMap">
+        SELECT id, gmt_create, gmt_modified, interface_case_id, task_id, category_id, url, name, method, params, headers,
+            level, response_time_length, status, response_cookie, status_code, response_txt, response_headers, context_variable,
+            validators, sort
+        FROM interface_result
+        WHERE is_deleted = 0
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+
+    <insert id="saveInterfaceResult" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO gmt_create, gmt_modified, interface_case_id, task_id, category_id, url, name, method, params, headers,
+        level,  response_time_length, status, response_cookie, status_code, response_txt, response_headers, context_variable,
+        validators, sort FROM interface_result VALUES (
+          NOW(), NOW(), #{interfaceCaseId}, #{taskId}, #{categoryId}, #{url}, #{name}, #{method}, #{params}, #{headers},
+            #{level}, #{responseTimeLength}, #{status}, #{responseCookie}, #{statusCode}, #{responseTxt}, #{responseHeaders},
+            #{contextVariable}, #{validators}, #{sort}
+        )
+    </insert>
+
+    <update id="updateInterfaceResult">
+        UPDATE interface_result
+        <set>
+          <if test="interface_case_id != null">interface_case_id = #{interfaceCaseId},</if>
+            <if test="task_id != null">task_id = #{taskId},</if>
+            <if test="category_id != null">category_id = #{categoryId},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="method != null">method = #{method},</if>
+            <if test="params != null">params = #{params},</if>
+            <if test="headers != null">headers = #{headers},</if>
+            <if test="level != null">level = #{level},</if>
+            <if test="response_time_length != null">response_time_length = #{responseTimeLength},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="response_cookie != null">response_cookie = #{responseCookie},</if>
+            <if test="status_code != null">status_code = #{statusCode},</if>
+            <if test="response_txt != null">response_txt = #{responseTxt},</if>
+            <if test="response_headers != null">response_headers = #{responseHeaders},</if>
+            <if test="context_variable != null">context_variable = #{contextVariable},</if>
+            <if test="validators != null">validators = #{validators},</if>
+            <if test="sort != null">sort = #{sort},</if>
+            gmt_modified = NOW()
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="getInterfaceResultById" resultMap="BaseResultMap">
+        SELECT id, gmt_create, gmt_modified, interface_case_id, task_id, category_id, url, name, method, params, headers,
+            level, response_time_length, status, response_cookie, status_code, response_txt, response_headers, context_variable,
+            validators, sort
+        FROM interface_result
+        WHERE id = #{id}
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

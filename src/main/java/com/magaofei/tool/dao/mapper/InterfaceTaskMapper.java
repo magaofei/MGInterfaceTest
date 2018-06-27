@@ -11,10 +11,10 @@ public interface InterfaceTaskMapper {
 
     List<InterfaceTask> listInterfaceTasks(@Param("limit") int limit, @Param("offset") int offset);
 
-    void saveInterfaceTask();
+    void saveInterfaceTask(InterfaceTask interfaceTask);
 
-    void updateInterfaceTaskById();
+    void updateInterfaceTaskById(int id);
 
-    void removeInterfaceTask();
+    void removeInterfaceTask(int id);
 
 }

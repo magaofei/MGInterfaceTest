@@ -1,5 +1,6 @@
 package com.magaofei.tool.dao;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -10,16 +11,27 @@ public class InterfaceResult  {
 
     private int id;
 
+    @NotNull
     private int interfaceCaseId;
+    @NotNull
     private int interfaceInfoId;
+    @NotNull
     private int taskId;
+    @NotNull
     private int categoryId;
+    @NotNull
     private String url;
+    @NotNull
     private String name;
+    @NotNull
     private String method;
+    @NotNull
     private String params;
+    @NotNull
     private String headers;
+    @NotNull
     private int level;
+
     private int responseTimeLength;
     private int status;
     private String responseCookie;
