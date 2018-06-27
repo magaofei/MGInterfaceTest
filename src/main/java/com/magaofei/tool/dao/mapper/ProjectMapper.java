@@ -2,6 +2,7 @@ package com.magaofei.tool.dao.mapper;
 
 import com.magaofei.tool.dao.Project;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import java.util.Map;
  * 项目映射
  * @author mark
  */
+@Component
 @Mapper
 public interface ProjectMapper {
 

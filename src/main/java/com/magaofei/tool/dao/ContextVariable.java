@@ -31,7 +31,7 @@ public class ContextVariable {
      * 类型 : SQL/ 已有测试用例返回结果
      */
 
-    private InterfaceTestcaseActionEnum interfaceTestcaseActionEnum;
+//    private InterfaceTestcaseActionEnum interfaceTestcaseActionEnum;
 
     private ExtractingDataTypeEnum extractingDataTypeEnum;
 

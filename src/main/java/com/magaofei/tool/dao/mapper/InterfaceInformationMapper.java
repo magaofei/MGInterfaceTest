@@ -29,7 +29,7 @@ public interface InterfaceInformationMapper {
     void saveInterfaceInformation(InterfaceInformation interfaceInformation);
 
     @Update("<script>" +
-            "UPDATE " + TABLE_NAME + " <SET> " +
+            "UPDATE " + TABLE_NAME + " <set> " +
             "<if test='name != null'>name = #{name}, </if> " +
             "<if test='interface_case_id != null'>interface_case_id = #{interfaceCaseId}, </if> " +
             "<if test='category_id != null'>category_id = #{categoryId}, </if> " +
@@ -38,7 +38,7 @@ public interface InterfaceInformationMapper {
             "<if test='params != params'>params = #{params}, </if> " +
             "<if test='headers != headers'>headers = #{headers}, </if> " +
             "<if test='sort != sort'>sort = #{sort}, </if> " +
-            "<set>" +
+            "</set>" +
             "WHERE id = #{id}" +
             "</script>"
     )

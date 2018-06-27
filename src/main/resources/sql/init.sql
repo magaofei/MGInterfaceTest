@@ -122,7 +122,7 @@ CREATE TABLE `interface_validators` (
   PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `task` (
+CREATE TABLE `interface_task` (
   `id` int (11) unsigned NOT NULL AUTO_INCREMENT,
   `project_id` int (11) unsigned NOT NULL DEFAULT 0 COMMENT "项目表 id",
   `run_time` VARCHAR (20) NOT NULL DEFAULT "" COMMENT "任务时间",
