@@ -1,4 +1,4 @@
 package com.magaofei.tool.dao.mapper;
 
-public class InterfaceConfigMapper {
+public interface InterfaceConfigMapper {
 }

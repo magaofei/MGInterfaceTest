@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
-@RequestMapping(value = "task")
+@RequestMapping(value = "/task")
 @RestController
 public class InterfaceTaskController {
 

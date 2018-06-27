@@ -4,7 +4,7 @@
 <mapper namespace="com.magaofei.tool.dao.mapper.InterfaceResultMapper" >
 
     <!--resultMap对应的是表与实体类的映射  - type 数据库表对应的实体类，别名或完整类名都可以-->
-    <resultMap id="BaseResultMap" type="com.magaofei.tool.dao.InterfaceTask" >
+    <resultMap id="BaseResultMap" type="com.magaofei.tool.dao.InterfaceResult" >
         <!-- 结果集的主键 -->
         <id column="id" property="id" />
         <!-- 普通的列  -column 是数据库中字段， property是实体类中字段-->
@@ -73,11 +73,13 @@
     </update>
 
     <select id="getInterfaceResultById" resultMap="BaseResultMap">
-        SELECT id, gmt_create, gmt_modified, interface_case_id, task_id, category_id, url, name, method, params, headers,
+        SELECT r.id, gmt_create, gmt_modified, interface_case_id, task_id, category_id, url, name, method, params, headers,
             level, response_time_length, status, response_cookie, status_code, response_txt, response_headers, context_variable,
             validators, sort
-        FROM interface_result
-        WHERE id = #{id}
+        FROM interface_result AS r, interface_result_context_variable, interface_result_response_headers, interface_result_response_txt,
+            interface_result_validators
+        WHERE r.id = #{id} AND interface_result_context_variable.interface_result_id = #{id} AND interface_result_response_headers.interface_result_id = #{id}
+              AND interface_result_response_txt.interface_result_id = #{id}
     </select>
 
 

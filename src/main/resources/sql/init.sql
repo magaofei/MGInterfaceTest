@@ -74,24 +74,28 @@ CREATE TABLE `interface_result` (
 CREATE TABLE `interface_result_response_txt` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `response_txt` TEXT  NOT NULL COMMENT "响应数据, 文本",
+  `interface_result_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "接口结果表id"
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `interface_result_response_headers` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `response_headers` TEXT NOT NULL COMMENT "响应头",
+  `interface_result_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "接口结果表id"
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `interface_result_context_variable` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `context_variable` TEXT NOT NULL  COMMENT "上下文变量数据",
+  `interface_result_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "接口结果表id"
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `interface_result_validators` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `validators` TEXT NOT NULL COMMENT "上下文变量数据",
+  `interface_result_id` int(11) unsigned NOT NULL DEFAULT 0 COMMENT "接口结果表id"
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 

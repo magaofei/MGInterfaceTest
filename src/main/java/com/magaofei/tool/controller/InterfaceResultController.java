@@ -17,7 +17,7 @@ import javax.validation.Valid;
 /**
  * @author mark
  */
-@RequestMapping(value = "interfaceResult")
+@RequestMapping(value = "/interfaceResult")
 @RestController
 public class InterfaceResultController {
 
@@ -46,8 +46,9 @@ public class InterfaceResultController {
         return ResponseEntity.ok().body(interfaceResult);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public ResponseEntity<?> getInterfaceResult(@PathVariable Integer id) {
+        System.out.println("id==" + id);
         if (null == id) {
             return ResponseEntity.badRequest().body("id == null");
         }
