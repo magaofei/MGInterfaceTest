@@ -44,7 +44,7 @@ public interface InterfaceInformationMapper {
     )
     void updateInterfaceInformation(InterfaceInformation interfaceInformation);
 
-    @Update("UPDATE " + TABLE_NAME + " SET is_deleted = #{deleted}")
+    @Update("UPDATE " + TABLE_NAME + " SET is_deleted = 1")
     void removeInterfaceInformaton(InterfaceInformation interfaceInformation);
 
 }

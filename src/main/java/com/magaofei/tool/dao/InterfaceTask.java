@@ -11,6 +11,9 @@ public class InterfaceTask {
 
     private int projectId;
     private String runTime;
+
+
+
     private int status;
     private String remark;
     private int deleted;
@@ -18,6 +21,16 @@ public class InterfaceTask {
     private Date gmtModified;
 
     public InterfaceTask() {
+    }
+
+    public InterfaceTask(int id, int projectId, String runTime, int status, String remark, Date gmtCreate, Date gmtModified) {
+        this.id = id;
+        this.projectId = projectId;
+        this.runTime = runTime;
+        this.status = status;
+        this.remark = remark;
+        this.gmtCreate = gmtCreate;
+        this.gmtModified = gmtModified;
     }
 
     public int getId() {

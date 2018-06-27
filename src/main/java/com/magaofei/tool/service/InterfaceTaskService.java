@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface InterfaceTaskService {
 
-    List<InterfaceTask> listInterfaceTask();
+    List<InterfaceTask> listInterfaceTask(int limit, int offset);
 }

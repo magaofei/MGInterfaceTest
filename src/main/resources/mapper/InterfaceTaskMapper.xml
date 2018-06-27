@@ -6,16 +6,50 @@
     <!--resultMap对应的是表与实体类的映射  - type 数据库表对应的实体类，别名或完整类名都可以-->
     <resultMap id="BaseResultMap" type="com.magaofei.tool.dao.InterfaceTask" >
         <!-- 结果集的主键 -->
-        <id column="id" property="id" jdbcType="INTEGER" />
+        <id column="id" property="id" />
         <!-- 普通的列  -column 是数据库中字段， property是实体类中字段-->
-        <result column="project_id" property="projectId" jdbcType="INTEGER" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+        <result column="run_time" property="runTime" />
     </resultMap>
 
 
     <!--parameterType(输入类型)、resultType(输出类型)-->
-    <select id="listInterfaceTasks" parameterType="String" resultMap="BaseResultMap" resultType="com.magaofei.tool.dao.InterfaceTask">
+    <select id="listInterfaceTasks" parameterType="map" resultMap="BaseResultMap" resultType="com.magaofei.tool.dao.InterfaceTask">
 
-        SELECT * FROM interface_task;
+        SELECT id, project_id, run_time, status, remark, gmt_create, gmt_modified FROM interface_task WHERE is_deleted = 0 LIMIT #{limit} OFFSET #{offset} ;
     </select>
+
+    <insert id="saveInterfaceTask" parameterType="String" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO project_id, run_time, status, remark, gmtCreate, gmtModified  FROM interface_task VALUES (
+          #{projectId}, #{runTime}, #{status}, #{remark}, NOW(), NOW()
+        )
+    </insert>
+    
+    <update id="updateInterfaceTaskById" parameterType="int">
+        UPDATE interface_task
+        <set>
+            <if test="project_id != null">project_id = #{projectId}, </if>
+            <if test="run_time != null">run_time = #{runTime}, </if>
+            <if test="status != null">status = #{status}, </if>
+            <if test="remark != null">remark = #{remark}, </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="removeInterfaceTask" parameterType="int">
+        UPDATE interface_task
+        <set>
+            is_deleted = 1
+        </set>
+    </update>
+
+
+
+
+
+
+
+
 
 </mapper>
